@@ -1,4 +1,4 @@
-# LeGiD
+# LeGiD (Let's Get it Done)
 Mini Challenge 1 Apple Developer Academy C7S2 Team 5
 
 App version : V.1.0
