@@ -13,6 +13,7 @@ import SwiftUI
     var status: Int
     var explainIdeaTurn: String
     var commentIdeaTurn: String
+    var ideaSubmitted: Int
     
     var players: [Player]
 
@@ -22,6 +23,7 @@ import SwiftUI
         self.status = 0
         self.explainIdeaTurn = " "
         self.commentIdeaTurn = " "
+        self.ideaSubmitted = 0
         
         self.players = []
     }

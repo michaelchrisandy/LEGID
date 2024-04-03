@@ -38,6 +38,9 @@ struct LobbyView: View {
                     .buttonStyle(PlainButtonStyle())
                     .onTapGesture {
                         GlobalMethod.updateRoomStatus(to: 2)
+                        TemporalStorage.setPlayers(players: room.players)
+                        TemporalStorage.shuffleCommentTurn()
+                        TemporalStorage.shuffleExplainTurn()
                     }
                 }
                 else{
@@ -113,6 +116,6 @@ struct LobbyView: View {
     
 }
 
-#Preview {
-    LobbyView()
-}
+//#Preview {
+//    LobbyView()
+//}

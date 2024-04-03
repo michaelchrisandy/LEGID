@@ -49,6 +49,8 @@
 		4A00305D2BB54C8800720353 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A00305C2BB54C8800720353 /* Room.swift */; };
 		4A0030642BB72A8600720353 /* GlobalMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0030632BB72A8600720353 /* GlobalMethod.swift */; };
 		4A0030822BBBCB3E00720353 /* inputIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0030812BBBCB3E00720353 /* inputIdeaView.swift */; };
+		4A21419F2BBC076A00FD86DB /* TemporalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A21419E2BBC076A00FD86DB /* TemporalStorage.swift */; };
+		4A2141A12BBD219D00FD86DB /* DiscussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2141A02BBD219D00FD86DB /* DiscussionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		4A00305C2BB54C8800720353 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		4A0030632BB72A8600720353 /* GlobalMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMethod.swift; sourceTree = "<group>"; };
 		4A0030812BBBCB3E00720353 /* inputIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputIdeaView.swift; sourceTree = "<group>"; };
+		4A21419E2BBC076A00FD86DB /* TemporalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporalStorage.swift; sourceTree = "<group>"; };
+		4A2141A02BBD219D00FD86DB /* DiscussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				4A0030532BB2B23700720353 /* LobbyView.swift */,
 				4A00304D2BB1BF1F00720353 /* CreateRoomView.swift */,
 				4A0030812BBBCB3E00720353 /* inputIdeaView.swift */,
+				4A2141A02BBD219D00FD86DB /* DiscussionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				4A0030632BB72A8600720353 /* GlobalMethod.swift */,
+				4A21419E2BBC076A00FD86DB /* TemporalStorage.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,8 +295,10 @@
 				4A0030562BB4145400720353 /* CoundownTimerView.swift in Sources */,
 				4A00305D2BB54C8800720353 /* Room.swift in Sources */,
 				4A002FFF2BB05A5800720353 /* Mini_Challenge_1App.swift in Sources */,
+				4A2141A12BBD219D00FD86DB /* DiscussionView.swift in Sources */,
 				4A00304E2BB1BF1F00720353 /* CreateRoomView.swift in Sources */,
 				4A0030542BB2B23700720353 /* LobbyView.swift in Sources */,
+				4A21419F2BBC076A00FD86DB /* TemporalStorage.swift in Sources */,
 				4A00305B2BB5438100720353 /* Player.swift in Sources */,
 				4A0030502BB1BF2B00720353 /* JoinRoomView.swift in Sources */,
 				4A0030822BBBCB3E00720353 /* inputIdeaView.swift in Sources */,

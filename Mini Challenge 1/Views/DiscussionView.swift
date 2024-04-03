@@ -2,51 +2,32 @@
 //  DiscussionView.swift
 //  Mini Challenge 1
 //
-//  Created by Michael Chrisandy on 02/04/24.
+//  Created by Michael Chrisandy on 03/04/24.
 //
 
 import SwiftUI
 import Firebase
 
-struct inputIdeaView: View {
+struct DiscussionView: View {
+    
     @State var room : Room = Room()
-    @State var idea: String = ""
-    @State private var isButtonDisabled = true
+    
+    @State private var counter = 60
+    @State private var timer: Timer?
     
     @State var isMaster = false
     
     var body: some View {
-        
         VStack{
-            TextField("What's your idea?", text: $idea)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button("Submit idea") {
-                let userID = UserDefaults.standard.string(forKey: "userID")!
-                
-                let ref = Database.database().reference()
-                
-                ref.child(room.id).child("players").child(userID).child("idea").setValue(idea)
-                
-                ref.child(room.id).child("info").child("ideaSubmitted").setValue(room.ideaSubmitted+1)
-            }
-            .padding()
-            .background(isButtonDisabled ? Color.gray : Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
-            .disabled(isButtonDisabled)
-            .onChange(of: idea) {
-                validateInputs()
-            }
-            
-            Text("Idea submitted : \(room.ideaSubmitted)")
+            Text("idenya")
+            Text("ide siapa")
+            Text("Sisa waktu: \(counter)")
         }.onAppear{
-
-            checkUserRole()
-            
             let roomCode = GlobalMethod.getRoomCode()
             let postRef = Database.database().reference().child(roomCode!)
+            
+            
+            checkUserRole()
             
             _ = postRef.observe(DataEventType.value, with: { snapshot in
                 guard snapshot.exists() else {
@@ -61,11 +42,29 @@ struct inputIdeaView: View {
             
             
         }
-        
     }
     
-    func validateInputs() {
-        isButtonDisabled = idea.isEmpty
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            updateCounter()
+        }
+    }
+    
+    func updateCounter(){
+        counter -= 1
+    }
+    
+    func checkUserRole() {
+        GlobalMethod.isMaster { isValid in
+            if isValid {
+                isMaster = true
+                print("User is a master")
+            } else {
+                isMaster = false
+                print("User is not a master")
+            }
+        }
     }
     
     func mapValue(value: [String: Any]){
@@ -97,21 +96,10 @@ struct inputIdeaView: View {
         }
     }
     
-    func checkUserRole() {
-        GlobalMethod.isMaster { isValid in
-            if isValid {
-                isMaster = true
-                print("User is a master")
-            } else {
-                isMaster = false
-                print("User is not a master")
-            }
-        }
-    }
-    
     
 }
 
+
 //#Preview {
-//    inputIdeaView()
+//    DiscussionView()
 //}

@@ -46,6 +46,8 @@ struct CreateRoomView: View {
             
             ref.child(roomCode).child("info").child("commentIdeaTurn").setValue(" ")
             
+            ref.child(roomCode).child("info").child("ideaSubmitted").setValue(0)
+            
             UserDefaults.standard.set(roomCode, forKey: "roomCode")
             
             navigateToLobby = true
